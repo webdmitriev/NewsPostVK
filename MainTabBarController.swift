@@ -14,6 +14,11 @@ class MainTabBarController: UIViewController {
     private let paddingBottom: Int = 13
     private let paddingRight: Int = 10
     
+    private let myTitle: UILabel = {
+        $0.text = "Title"
+        return $0
+    }(UILabel())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
