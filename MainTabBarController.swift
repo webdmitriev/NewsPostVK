@@ -9,10 +9,10 @@ import UIKit
 
 class MainTabBarController: UIViewController {
     
-    private let padding: Int = 16
-    private let paddingTop: Int = 22
-    private let paddingBottom: Int = 18
-    private let paddingRight: Int = 12
+    private let padding: Int = 9
+    private let paddingTop: Int = 21
+    private let paddingBottom: Int = 13
+    private let paddingRight: Int = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
