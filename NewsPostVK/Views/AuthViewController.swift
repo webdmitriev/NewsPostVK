@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  AuthViewController.swift
 //  NewsPostVK
 //
 //  Created by Олег Дмитриев on 03.12.2024.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class AuthViewController: UIViewController, AuthView {
     
     var delegate: SceneDelegateProtocol?
+    var presenter: AuthPresenter?
     
     lazy var thumbnail: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -48,12 +49,14 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemMint
         
-        view.addSubviews(thumbnail, welcomeTitle, welcomeSubtitle, welcomeButton)
+//        view.addSubviews(thumbnail, welcomeTitle, welcomeSubtitle, welcomeButton)
         
         // MARK: - Handler to Tab Bar VC
-        welcomeButton.addTarget(self, action: #selector(signApp), for: .primaryActionTriggered)
+//        welcomeButton.addTarget(self, action: #selector(signApp), for: .primaryActionTriggered)
         
-        setupConstraints()
+//        setupConstraints()
+        
+//        presenter?.viewDidLoad()
     }
     
     private func setupConstraints() {
@@ -82,6 +85,14 @@ class WelcomeViewController: UIViewController {
     
     @objc func signApp(sender: UITapGestureRecognizer) {
         self.delegate?.changeRootVC()
+    }
+    
+    func showLoginSuccess() {
+        print("showLoginSuccess")
+    }
+    
+    func showLoginError(message: String) {
+        print("showLoginError")
     }
     
 }

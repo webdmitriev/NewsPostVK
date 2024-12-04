@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct AuthModel {
+    let username: String
+    let token: String
+}

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol AuthView {
+    func showLoginSuccess()
+    func showLoginError(message: String)
+}
+

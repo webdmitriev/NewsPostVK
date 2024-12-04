@@ -1,5 +1,5 @@
 //
-//  NewsViewController.swift
+//  NewsFeedViewController.swift
 //  NewsPostVK
 //
 //  Created by Олег Дмитриев on 03.12.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsViewController: UIViewController {
+class NewsFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

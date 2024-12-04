@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol View: AnyObject {
+    func updateUI()
+}

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol AuthPresenter {
+    func login(username: String, password: String)
+}
+

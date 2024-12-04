@@ -7,19 +7,28 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+protocol SceneDelegateProtocol {
+    func changeRootVC()
+}
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, SceneDelegateProtocol, UITabBarControllerDelegate {
 
     var window: UIWindow?
-
+    
+    func changeRootVC() {
+        self.window?.rootViewController = TabBarController()
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let sceneWindow = (scene as? UIWindowScene) else { return }
         
+        let authVC = AuthViewController()
+        authVC.delegate = self
+        
+        
         self.window = UIWindow(windowScene: sceneWindow)
-        self.window?.rootViewController = ViewController()
+//        self.window?.rootViewController = authVC
+        self.window?.rootViewController = AuthModuleBuilder.build()
         self.window?.makeKeyAndVisible()
     }
 
