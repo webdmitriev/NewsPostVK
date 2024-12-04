@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UITabBarController.swift
 //  NewsPostVK
 //
 //  Created by Олег Дмитриев on 03.12.2024.
@@ -7,13 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class UITabBarController: UITabBarController {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
